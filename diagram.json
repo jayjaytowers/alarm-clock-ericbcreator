@@ -1,0 +1,86 @@
+{
+  "version": 1,
+  "author": "JCT",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-aitewinrobot-esp32c3-supermini",
+      "id": "esp",
+      "top": -309.84,
+      "left": 330.47,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-max7219-matrix",
+      "id": "matrix1",
+      "top": -412.2,
+      "left": 151.44,
+      "attrs": { "chain": "4" }
+    },
+    { "type": "wokwi-ky-040", "id": "encoder1", "top": -257.5, "left": 172, "attrs": {} },
+    {
+      "type": "wokwi-photoresistor-sensor",
+      "id": "ldr1",
+      "top": -179.2,
+      "left": 240.8,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-buzzer",
+      "id": "bz1",
+      "top": -233.1,
+      "left": 513.3,
+      "rotate": 90,
+      "attrs": { "volume": "0.1" }
+    },
+    { "type": "board-bmp180", "id": "bmp1", "top": -320.96, "left": 173.06, "attrs": {} },
+    {
+      "type": "wokwi-text",
+      "id": "text1",
+      "top": -403.2,
+      "left": 518.4,
+      "attrs": { "text": "ESP32-C3-mini\n4. SCK\n5. MISO\n6. MOSI\n7. SS\n8. SDA\n9. SCL" }
+    },
+    {
+      "type": "wokwi-pushbutton-6mm",
+      "id": "btn1",
+      "top": -263.8,
+      "left": 452,
+      "rotate": 180,
+      "attrs": { "color": "green", "xray": "1" }
+    },
+    {
+      "type": "wokwi-text",
+      "id": "text2",
+      "top": -240,
+      "left": 441.6,
+      "attrs": { "text": "Sensor\nmano" }
+    }
+  ],
+  "connections": [
+    [ "esp:TX", "$serialMonitor:RX", "", [] ],
+    [ "esp:RX", "$serialMonitor:TX", "", [] ],
+    [ "matrix1:V+", "esp:5V", "red", [ "h9.6", "v115.2" ] ],
+    [ "matrix1:GND", "esp:GND", "black", [ "h9.6", "v115.2" ] ],
+    [ "esp:6", "matrix1:DIN", "green", [ "h-19.2", "v-28.8", "h182.4", "v-57.6" ] ],
+    [ "matrix1:CS", "esp:7", "orange", [ "h9.6", "v48", "h-182.4", "v38.4" ] ],
+    [ "esp:4", "matrix1:CLK", "blue", [ "h105.6", "v-86.4" ] ],
+    [ "esp:5V", "bmp1:VCC", "red", [ "h105.6", "v-19.2" ] ],
+    [ "bmp1:GND", "esp:GND", "black", [ "h76.8", "v-9.41", "h182.4", "v28.8" ] ],
+    [ "esp:8", "bmp1:SDA", "gray", [ "h-19.2", "v-19.39" ] ],
+    [ "esp:9", "bmp1:SCL", "white", [ "h-19.2", "v-38.59" ] ],
+    [ "esp:10", "encoder1:CLK", "violet", [ "h0" ] ],
+    [ "esp:RX", "encoder1:DT", "purple", [ "v0" ] ],
+    [ "esp:TX", "encoder1:SW", "magenta", [ "h0" ] ],
+    [ "encoder1:GND", "esp:GND", "black", [ "h211.2", "v-76" ] ],
+    [ "encoder1:VCC", "esp:5V", "red", [ "h28.8", "v10", "h182.4", "v-86.4" ] ],
+    [ "esp:3", "btn1:2.r", "green", [ "h0" ] ],
+    [ "btn1:1.l", "esp:GND", "black", [ "h19.2", "v-38.4" ] ],
+    [ "bz1:1", "esp:GND", "black", [ "h-9.6", "v-86.4" ] ],
+    [ "bz1:2", "esp:2", "orange", [ "h-76.8", "v-58" ] ],
+    [ "ldr1:VCC", "esp:5V", "red", [ "h86.4", "v-134.4" ] ],
+    [ "ldr1:GND", "esp:GND", "black", [ "h86.4", "v-134.8" ] ],
+    [ "ldr1:AO", "esp:1", "purple", [ "h19.2", "v-106.3" ] ]
+  ],
+  "dependencies": {}
+}
