@@ -376,14 +376,14 @@
   #define LED_NUM_OF_VERT_DISPLAYS 1            // @EB-setup led matrix number of rows
 #endif
 
-#define LED_MATRIX_ROTATION_0 1                 // @EB-setup matrix 0 rotation (0-3)
-#define LED_MATRIX_ROTATION_1 1
-#define LED_MATRIX_ROTATION_2 1
-#define LED_MATRIX_ROTATION_3 1
-#define LED_MATRIX_ROTATION_4 1
-#define LED_MATRIX_ROTATION_5 1
-#define LED_MATRIX_ROTATION_6 1
-#define LED_MATRIX_ROTATION_7 1
+#define LED_MATRIX_ROTATION_0 3                 // @EB-setup matrix 0 rotation (0-3)
+#define LED_MATRIX_ROTATION_1 3
+#define LED_MATRIX_ROTATION_2 3
+#define LED_MATRIX_ROTATION_3 3
+#define LED_MATRIX_ROTATION_4 3
+#define LED_MATRIX_ROTATION_5 3
+#define LED_MATRIX_ROTATION_6 3
+#define LED_MATRIX_ROTATION_7 3
 
 // debug printing messages in the serial monitor, do not change these lines
 #ifdef DEBUG
